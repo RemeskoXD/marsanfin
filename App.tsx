@@ -9,7 +9,6 @@ import Testimonials from './components/Testimonials';
 import LegalDocs from './components/LegalDocs';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import CookieConsent from './components/CookieConsent';
 
 // Helper component to scroll to top on route change
 const ScrollToTop = () => {
@@ -27,21 +26,18 @@ const ScrollToTop = () => {
 const HomePage = () => (
   <>
     <Hero />
-    <Services /> 
-    <About />    
+    <Services /> {/* Renders in "summary" mode */}
+    <About />    {/* Renders in "summary" mode */}
     <Partners />
     <Testimonials />
-    <div className="reveal-on-scroll">
-      <Contact />
-    </div>
+    <Contact />
   </>
 );
 
 const AboutPage = () => (
   <>
-    <div className="bg-gray-50 pt-32 pb-10 text-center border-b border-gray-200">
+    <div className="bg-gray-50 pt-32 pb-10 text-center">
        <h1 className="text-4xl font-bold text-gray-900">O nás</h1>
-       <p className="text-gray-500 mt-2">Příběh a hodnoty Marsan Fin</p>
     </div>
     <About />
     <Testimonials />
@@ -50,9 +46,8 @@ const AboutPage = () => (
 
 const ServicesPage = () => (
   <>
-    <div className="bg-gray-50 pt-32 pb-10 text-center border-b border-gray-200">
+    <div className="bg-gray-50 pt-32 pb-10 text-center">
        <h1 className="text-4xl font-bold text-gray-900">Naše služby</h1>
-       <p className="text-gray-500 mt-2">Komplexní péče o Vaše finance</p>
     </div>
     <Services />
     <Partners />
@@ -61,15 +56,14 @@ const ServicesPage = () => (
 
 const PartnersPage = () => (
   <>
-    <div className="bg-gray-50 pt-32 pb-10 text-center border-b border-gray-200">
+    <div className="bg-gray-50 pt-32 pb-10 text-center">
        <h1 className="text-4xl font-bold text-gray-900">Naši partneři</h1>
-       <p className="text-gray-500 mt-2">Spolupráce založená na důvěře</p>
     </div>
     <Partners />
-    <div className="py-20 text-center container mx-auto px-4 bg-white">
-      <p className="text-gray-600 max-w-2xl mx-auto mb-8 text-lg leading-relaxed">
-        Díky silnému zázemí a spolupráci s <strong>HV Group</strong> máme přístup k exkluzivním podmínkám u bank a pojišťoven. 
-        Vždy pro vás hledáme to nejvýhodnější řešení na trhu, nikoliv to, co se "nejlépe prodává".
+    <div className="py-20 text-center container mx-auto px-4">
+      <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+        Spolupracujeme s celou řadou pojišťoven a bankovních domů, abychom pro vás vždy našli to nejlepší řešení na trhu.
+        Díky silnému zázemí HV Group máme přístup k exkluzivním podmínkám.
       </p>
     </div>
   </>
@@ -77,9 +71,8 @@ const PartnersPage = () => (
 
 const DocumentsPage = () => (
   <>
-    <div className="bg-gray-50 pt-32 pb-10 text-center border-b border-gray-200">
+    <div className="bg-gray-50 pt-32 pb-10 text-center">
        <h1 className="text-4xl font-bold text-gray-900">Dokumenty</h1>
-       <p className="text-gray-500 mt-2">Legislativa a důležité informace</p>
     </div>
     <LegalDocs />
   </>
@@ -87,24 +80,18 @@ const DocumentsPage = () => (
 
 const ContactPage = () => (
   <>
-    <div className="bg-gray-50 pt-32 pb-10 text-center border-b border-gray-200">
+    <div className="bg-gray-50 pt-32 pb-10 text-center">
        <h1 className="text-4xl font-bold text-gray-900">Kontakt</h1>
-       <p className="text-gray-500 mt-2">Jsme tu pro Vás</p>
     </div>
     <Contact />
-    {/* Functional Google Maps Embed */}
-    <div className="w-full h-[450px] bg-slate-100 border-t border-gray-200">
-      <iframe 
-        width="100%" 
-        height="100%" 
-        frameBorder="0" 
-        scrolling="no" 
-        marginHeight={0} 
-        marginWidth={0} 
-        src="https://maps.google.com/maps?q=Korunn%C3%AD+2569%2F108%2C+Praha+10&t=&z=15&ie=UTF8&iwloc=&output=embed"
-        title="Mapa sídla Marsan Fin"
-        className="filter grayscale hover:grayscale-0 transition-all duration-500"
-      ></iframe>
+    <div className="h-[400px] w-full bg-slate-200 relative">
+      {/* Placeholder for real Google Maps Embed - Client needs to provide API key or Embed code */}
+      <div className="absolute inset-0 flex items-center justify-center text-gray-500 bg-gray-200">
+         <div className="text-center p-4">
+           <p className="font-bold text-lg mb-2">Mapa - Korunní 2569/108, Praha 10</p>
+           <p className="text-sm">Zde bude interaktivní mapa po dodání API klíče</p>
+         </div>
+      </div>
     </div>
   </>
 );
@@ -126,7 +113,6 @@ function App() {
           </Routes>
         </main>
         <Footer />
-        <CookieConsent />
       </div>
     </BrowserRouter>
   );

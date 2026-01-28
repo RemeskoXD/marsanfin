@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marsan Fin | Komplexní finanční služby</title>
     <meta name="description" content="Profesionální finanční poradenství, pojištění a investice. Váš partner ve světě financí." />
+    <!-- Keeping Tailwind via CDN for simplicity in this setup, normally would be in package.json too -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
@@ -33,10 +34,14 @@
               }
             },
             animation: {
-              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'fade-in': 'fadeIn 1s ease-out forwards',
+              'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
             },
             keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
               fadeInUp: {
                 '0%': { opacity: '0', transform: 'translateY(20px)' },
                 '100%': { opacity: '1', transform: 'translateY(0)' },
@@ -63,9 +68,11 @@
       }
       
       .reveal-on-scroll {
-        opacity: 0;
-        transform: translateY(30px);
         transition: all 0.8s ease-out;
+      }
+      .reveal-on-scroll.scrolled-hidden {
+         opacity: 0;
+         transform: translateY(30px);
       }
       .reveal-on-scroll.visible {
         opacity: 1;
@@ -75,43 +82,45 @@
   <script type="importmap">
 {
   "imports": {
-    "react": "https://esm.sh/react@18.2.0",
-    "react/": "https://esm.sh/react@18.2.0/",
-    "react-dom": "https://esm.sh/react-dom@18.2.0?deps=react@18.2.0",
-    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client?deps=react@18.2.0",
-    "react-router-dom": "https://esm.sh/react-router-dom@6.20.0?deps=react@18.2.0,react-dom@18.2.0",
-    "lucide-react": "https://esm.sh/lucide-react@0.292.0?deps=react@18.2.0",
+    "react": "https://esm.sh/react@^19.2.4",
     "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
     "vite": "https://esm.sh/vite@^7.3.1",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0"
   }
 }
 </script>
 </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="./index.tsx"></script>
+    <script type="module" src="/index.tsx"></script>
     <script>
-      // Simple intersection observer for scroll animations
+      // More robust intersection observer
       document.addEventListener('DOMContentLoaded', () => {
         const observerOptions = {
-          threshold: 0.1
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px"
         };
         
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
               entry.target.classList.add('visible');
-              entry.target.classList.remove('observed'); // remove observed class to avoid double-processing if logic changes
-              observer.unobserve(entry.target);
+              entry.target.classList.remove('scrolled-hidden');
+              observer.unobserve(entry.target); // Only animate once
             }
           });
         }, observerOptions);
 
+        // Check for new elements periodically
         setInterval(() => {
           document.querySelectorAll('.reveal-on-scroll:not(.observed)').forEach(el => {
-            observer.observe(el);
+            // Initialize state
             el.classList.add('observed');
+            el.classList.add('scrolled-hidden'); // Hide only when JS is ready to animate them in
+            observer.observe(el);
           });
         }, 500);
       });
