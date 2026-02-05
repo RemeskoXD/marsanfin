@@ -9,7 +9,7 @@ export const COMPANY_INFO = {
   address: "Korunní 2569/108, 101 00 Praha 10 - Vinohrady",
   ico: "236 13 505",
   dataBox: "9cmamdb",
-  logoUrl: "/iconlogo.png",
+  logoUrl: "https://web2.itnahodinu.cz/pojistovna1/logo.png",
   cnbRegistryUrl: "https://jerrs.cnb.cz/apljerrsdad/JERRS.WEB14.POVOLENE_CINNOSTI?p_lang=cz&p_TYP_SUBJEKTU=P&p_SEQ_ID=17476207&p_VER_ID=1000&p_SVR_SEQ_ID=17561132&p_SVR_VER_ID=1000&p_ROL_KOD=192&p_DATUM=31.10.2025&p_CZE_ID=CZ"
 };
 

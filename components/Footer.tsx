@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
               <img 
                 src={COMPANY_INFO.logoUrl} 
                 alt="Marsan Financial Logo" 
-                className="h-16 w-auto object-contain brightness-0 invert" 
+                className="h-24 md:h-32 w-auto object-contain brightness-0 invert" 
               />
             </div>
             <p className="text-sm leading-relaxed mb-6 text-gray-300">
