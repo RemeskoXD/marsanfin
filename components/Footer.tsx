@@ -90,7 +90,7 @@ const Footer: React.FC = () => {
               <img 
                 src="https://mescon.cz/wp-content/uploads/2025/02/MESCON-200-%C3%97-40-px-19.png" 
                 alt="MESCON" 
-                className="h-5 w-auto brightness-0 invert" 
+                className="h-9 w-auto brightness-0 invert" 
               />
             </a>
           </div>
