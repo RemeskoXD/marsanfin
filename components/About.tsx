@@ -19,7 +19,7 @@ const About: React.FC = () => {
       <div className="container mx-auto px-4">
         <SectionHeading 
           title="O společnosti" 
-          subtitle="Jsme Marsan Fin. Budujeme dlouhodobé vztahy založené na důvěře, profesionalitě a stabilitě." 
+          subtitle="Jsme Marsan Financial. Budujeme dlouhodobé vztahy založené na důvěře, profesionalitě a stabilitě." 
         />
 
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 mb-16">
@@ -27,7 +27,7 @@ const About: React.FC = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                <img 
                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                 alt="Tým Marsan Fin" 
+                 alt="Tým Marsan Financial" 
                  className="w-full object-cover h-[500px]"
                />
                <div className="absolute inset-0 bg-primary/10"></div>
@@ -43,8 +43,8 @@ const About: React.FC = () => {
           <div className="lg:w-1/2 order-1 lg:order-2">
             <h3 className="text-3xl font-bold text-gray-900 mb-6">Stabilní partner pro Váš život i podnikání</h3>
             <p className="text-gray-600 mb-6 leading-relaxed text-lg">
-              Společnost Marsan Fin s.r.o. působí na trhu jako nezávislý zprostředkovatel finančních produktů. 
-              Naším cílem není jen jednorázový prodej, ale <strong className="text-primary">komplexní správa Vašeho finančního portfolia</strong> v čase.
+              Společnost <strong className="text-primary">Marsan Financial</strong> působí na trhu jako nezávislý zprostředkovatel finančních produktů. 
+              Naším cílem není jen jednorázový prodej, ale komplexní správa Vašeho finančního portfolia v čase.
             </p>
             <p className="text-gray-600 mb-8 leading-relaxed">
               Úzce spolupracujeme se společností <a href="https://hvgroup.cz" target="_blank" rel="noopener noreferrer" className="text-primary font-bold underline decoration-accent decoration-2 underline-offset-2 hover:text-primary-light">HV Group</a>, což nám umožňuje přinášet našim klientům 

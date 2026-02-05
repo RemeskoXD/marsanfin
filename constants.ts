@@ -2,19 +2,22 @@ import { Shield, TrendingUp, Building2, Car, Heart, FileText, Briefcase, Calcula
 import { ServiceItem, Testimonial, DocumentItem } from "./types";
 
 export const COMPANY_INFO = {
-  name: "Marsan Fin s.r.o.",
+  name: "Marsan Fin s.r.o.", // Legal name stays
+  brandName: "Marsan Financial", // Marketing name
   phone: "608 060 303",
   email: "info@marsanfin.cz",
   address: "Korunní 2569/108, 101 00 Praha 10 - Vinohrady",
   ico: "236 13 505",
-  logoUrl: "https://web2.itnahodinu.cz/pojistovna1/logo.png"
+  dataBox: "9cmamdb",
+  logoUrl: "https://web2.itnahodinu.cz/pojistovna1/logo.png",
+  cnbRegistryUrl: "https://jerrs.cnb.cz/apljerrsdad/JERRS.WEB14.POVOLENE_CINNOSTI?p_lang=cz&p_TYP_SUBJEKTU=P&p_SEQ_ID=17476207&p_VER_ID=1000&p_SVR_SEQ_ID=17561132&p_SVR_VER_ID=1000&p_ROL_KOD=192&p_DATUM=31.10.2025&p_CZE_ID=CZ"
 };
 
 export const SERVICES: ServiceItem[] = [
   {
     id: "insurance-life",
     title: "Životní pojištění",
-    description: "Komplexní ochrana pro Vás a Vaši rodinu. Zajistíme finanční stabilitu v nečekaných životních situacích.",
+    description: "Komplexní ochrana pro Vás a Vaši rodinu. Marsan Financial zajistí finanční stabilitu v nečekaných situacích.",
     icon: Heart
   },
   {
@@ -54,7 +57,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: "t1",
     author: "Ing. Petr Novák",
     role: "Majitel stavební firmy",
-    text: "S Marsan Fin spolupracujeme již 5 let. Oceňuji především rychlost a profesionalitu při řešení pojistných událostí naší firemní flotily."
+    text: "S Marsan Financial spolupracujeme již 5 let. Oceňuji především rychlost a profesionalitu při řešení pojistných událostí naší firemní flotily."
   },
   {
     id: "t2",
@@ -66,13 +69,45 @@ export const TESTIMONIALS: Testimonial[] = [
     id: "t3",
     author: "Martin Svoboda",
     role: "IT Specialista",
-    text: "Řešili jsme komplikovanou hypotéku. Tým Marsan Fin dokázal vyjednat podmínky, které nám v bance na přepážce nikdo nenabídl."
+    text: "Řešili jsme komplikovanou hypotéku. Tým Marsan Financial dokázal vyjednat podmínky, které nám v bance na přepážce nikdo nenabídl."
   }
 ];
 
 export const DOCUMENTS: DocumentItem[] = [
-  { title: "Osvědčení o registraci ČNB", type: "PDF", date: "2024" },
-  { title: "Reklamační řád", type: "PDF", date: "2023" },
-  { title: "Informace pro klienta", type: "PDF", date: "2024" },
-  { title: "Seznam spolupracujících pojišťoven", type: "PDF", date: "2024" }
+  { 
+    title: "Osvědčení o registraci ČNB", 
+    type: "LINK", 
+    date: "2025",
+    url: COMPANY_INFO.cnbRegistryUrl
+  },
+  { 
+    title: "Certifikát Pojištění (Sandra Krčková)", 
+    type: "PDF", 
+    date: "2024",
+    url: "https://web2.itnahodinu.cz/pojistovna1/Sandra_Krc%CC%8Ckova%CC%81_certifikat_poj.pdf"
+  },
+  { 
+    title: "Certifikát Úvěry (Sandra Krčková)", 
+    type: "PDF", 
+    date: "2024",
+    url: "https://web2.itnahodinu.cz/pojistovna1/Sandra_Krc%CC%8Ckova%CC%81_2_certifikat_uver.pdf"
+  },
+  { 
+    title: "Certifikát AML (HV Group)", 
+    type: "PDF", 
+    date: "2024",
+    url: "https://web2.itnahodinu.cz/pojistovna1/AML_HV%20GROUP_HV_GROUP_CERTIFIKA%CC%81T_AML.pdf"
+  },
+  { 
+    title: "Reklamační řád", 
+    type: "PDF", 
+    date: "2023",
+    url: "#" 
+  },
+  { 
+    title: "Informace pro klienta", 
+    type: "PDF", 
+    date: "2024",
+    url: "#" 
+  }
 ];

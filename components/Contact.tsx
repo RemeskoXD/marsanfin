@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SectionHeading from './SectionHeading';
 import { COMPANY_INFO } from '../constants';
-import { MapPin, Phone, Mail, Building, Send } from 'lucide-react';
+import { MapPin, Phone, Mail, Building, Send, Inbox } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [formStatus, setFormStatus] = useState<'idle' | 'success'>('idle');
@@ -65,6 +65,16 @@ const Contact: React.FC = () => {
                   <p className="text-sm text-gray-500 font-semibold uppercase mb-1">Fakturační údaje</p>
                   <p className="text-gray-800">IČO: {COMPANY_INFO.ico}</p>
                   <p className="text-gray-800">{COMPANY_INFO.name}</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-primary shrink-0">
+                  <Inbox size={24} />
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500 font-semibold uppercase mb-1">Datová schránka</p>
+                  <p className="text-gray-800 font-mono bg-gray-100 px-2 py-0.5 rounded inline-block">{COMPANY_INFO.dataBox}</p>
                 </div>
               </div>
             </div>

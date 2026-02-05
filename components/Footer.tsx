@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
           
           {/* Brand */}
           <div className="col-span-1">
-            <h4 className="text-white text-2xl font-bold mb-6 tracking-tight">MARSAN FIN</h4>
+            <h4 className="text-white text-2xl font-bold mb-6 tracking-tight">MARSAN FINANCIAL</h4>
             <p className="text-sm leading-relaxed mb-6 text-gray-300">
               Váš spolehlivý partner pro finance a pojištění.
               Přinášíme stabilitu do Vašich financí díky exkluzivní spolupráci s HV Group.
@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
               <li><Link to="/dokumenty" className="hover:text-accent transition-colors">Informace pro klienty</Link></li>
               <li><Link to="/dokumenty" className="hover:text-accent transition-colors">Reklamační řád</Link></li>
               <li><Link to="/dokumenty" className="hover:text-accent transition-colors">Ochrana osobních údajů</Link></li>
-              <li><Link to="/dokumenty" className="hover:text-accent transition-colors">Seznam pojišťoven</Link></li>
+              <li><a href={COMPANY_INFO.cnbRegistryUrl} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">Registrace ČNB</a></li>
             </ul>
           </div>
 

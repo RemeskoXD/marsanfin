@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, ShieldCheck, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { COMPANY_INFO } from '../constants';
 
 const Hero: React.FC = () => {
   return (
@@ -23,15 +24,16 @@ const Hero: React.FC = () => {
                 <ShieldCheck size={14} className="text-primary" />
                 <span>Partner HV Group</span>
               </div>
-              <div className="inline-flex items-center gap-2 bg-green-50 border border-green-100 px-3 py-1 rounded-full text-green-700 text-xs font-bold uppercase tracking-wide">
+              <a href={COMPANY_INFO.cnbRegistryUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-green-50 border border-green-100 px-3 py-1 rounded-full text-green-700 text-xs font-bold uppercase tracking-wide hover:bg-green-100 transition-colors">
                 <TrendingUp size={14} />
                 <span>Registrace ČNB</span>
-              </div>
+              </a>
             </div>
             
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-[1.15]">
               Budoucnost vašich <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light">financí</span> začíná zde.
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light">financí</span> začíná u <br/>
+              Marsan Financial.
             </h1>
             
             <p className="text-lg text-gray-600 leading-relaxed max-w-lg border-l-4 border-accent pl-4">
@@ -76,7 +78,7 @@ const Hero: React.FC = () => {
               <div className="absolute -inset-4 bg-gradient-to-tr from-primary to-accent opacity-20 rounded-2xl blur-lg"></div>
               <img 
                 src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
-                alt="Finanční konzultace Marsan Fin" 
+                alt="Finanční konzultace Marsan Financial" 
                 className="relative rounded-2xl shadow-2xl w-full object-cover h-[400px] lg:h-[600px] z-10"
               />
               

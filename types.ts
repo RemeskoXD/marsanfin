@@ -21,6 +21,7 @@ export interface Testimonial {
 
 export interface DocumentItem {
   title: string;
-  type: 'PDF' | 'DOCX';
+  type: 'PDF' | 'DOCX' | 'LINK';
   date: string;
+  url: string;
 }

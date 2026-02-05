@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
       {/* Top Bar Info */}
       <div className="bg-primary-dark text-white text-xs py-2 hidden lg:block border-b border-white/10">
          <div className="container mx-auto px-4 flex justify-between items-center">
-            <span className="opacity-80">Profesionální finanční služby ve spolupráci s HV Group</span>
+            <span className="opacity-80">Profesionální služby ve spolupráci s HV Group | {COMPANY_INFO.brandName}</span>
             <div className="flex gap-6">
               <a href={`tel:${COMPANY_INFO.phone.replace(/\s/g, '')}`} className="flex items-center gap-2 hover:text-accent transition-colors"><Phone size={12} /> {COMPANY_INFO.phone}</a>
               <a href={`mailto:${COMPANY_INFO.email}`} className="flex items-center gap-2 hover:text-accent transition-colors"><Mail size={12} /> {COMPANY_INFO.email}</a>
@@ -50,21 +50,21 @@ const Navbar: React.FC = () => {
 
       <nav 
         className={`sticky top-0 w-full z-50 transition-all duration-300 border-b ${
-          scrolled ? 'bg-white shadow-md py-2 border-gray-100' : 'bg-white py-4 border-transparent'
+          scrolled ? 'bg-white shadow-md py-1 border-gray-100' : 'bg-white py-2 border-transparent'
         }`}
       >
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center h-24 md:h-32">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 group">
+            <Link to="/" className="flex items-center gap-4 group h-full py-2">
               <img 
                 src={COMPANY_INFO.logoUrl} 
-                alt="Marsan Fin Logo" 
-                className="h-10 md:h-12 w-auto object-contain group-hover:opacity-90 transition-opacity" 
+                alt="Marsan Financial Logo" 
+                className="h-full w-auto object-contain max-h-[85px] md:max-h-[110px] group-hover:opacity-90 transition-opacity" 
               />
-              <div className="hidden md:block">
-                <span className="block text-primary font-bold text-xl leading-none tracking-tight">MARSAN FIN</span>
-                <span className="block text-gray-500 text-[10px] uppercase tracking-[0.2em] mt-0.5">Finance & Insurance</span>
+              <div className="hidden md:flex flex-col justify-center h-full pt-2">
+                <span className="block text-primary font-bold text-2xl lg:text-3xl leading-none tracking-tight">MARSAN FIN</span>
+                <span className="block text-gray-500 text-[10px] lg:text-xs uppercase tracking-[0.2em] mt-1">Finance & Insurance</span>
               </div>
             </Link>
 
@@ -99,7 +99,7 @@ const Navbar: React.FC = () => {
               className="lg:hidden text-gray-700 p-2 hover:bg-gray-100 rounded-md transition-colors"
               onClick={() => setIsOpen(!isOpen)}
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
         </div>
