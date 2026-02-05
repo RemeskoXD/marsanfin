@@ -13,7 +13,13 @@ const Footer: React.FC = () => {
           
           {/* Brand */}
           <div className="col-span-1">
-            <h4 className="text-white text-2xl font-bold mb-6 tracking-tight">MARSAN FINANCIAL</h4>
+            <div className="mb-6">
+              <img 
+                src={COMPANY_INFO.logoUrl} 
+                alt="Marsan Financial Logo" 
+                className="h-16 w-auto object-contain brightness-0 invert" 
+              />
+            </div>
             <p className="text-sm leading-relaxed mb-6 text-gray-300">
               Váš spolehlivý partner pro finance a pojištění.
               Přinášíme stabilitu do Vašich financí díky exkluzivní spolupráci s HV Group.
@@ -70,9 +76,23 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
           <p>&copy; {currentYear} {COMPANY_INFO.name}. Všechna práva vyhrazena.</p>
-          <div className="flex gap-6 mt-4 md:mt-0">
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 mt-4 md:mt-0">
             <span>IČO: {COMPANY_INFO.ico}</span>
-            <span>Created with precision</span>
+            <span className="hidden md:inline text-gray-700">|</span>
+            <a 
+              href="https://mescon.cz/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center gap-2 opacity-60 hover:opacity-100 transition-opacity"
+              title="Vytvořilo digitální studio MESCON"
+            >
+              <span className="uppercase tracking-wider text-[10px] pt-0.5">Created by</span>
+              <img 
+                src="https://mescon.cz/wp-content/uploads/2025/02/MESCON-200-%C3%97-40-px-19.png" 
+                alt="MESCON" 
+                className="h-5 w-auto brightness-0 invert" 
+              />
+            </a>
           </div>
         </div>
       </div>

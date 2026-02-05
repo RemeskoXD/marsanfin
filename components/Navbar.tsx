@@ -56,16 +56,12 @@ const Navbar: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-24 md:h-32">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-4 group h-full py-2">
+            <Link to="/" className="flex items-center h-full py-2 group">
               <img 
                 src={COMPANY_INFO.logoUrl} 
                 alt="Marsan Financial Logo" 
                 className="h-full w-auto object-contain max-h-[85px] md:max-h-[110px] group-hover:opacity-90 transition-opacity" 
               />
-              <div className="hidden md:flex flex-col justify-center h-full pt-2">
-                <span className="block text-primary font-bold text-2xl lg:text-3xl leading-none tracking-tight">MARSAN FIN</span>
-                <span className="block text-gray-500 text-[10px] lg:text-xs uppercase tracking-[0.2em] mt-1">Finance & Insurance</span>
-              </div>
             </Link>
 
             {/* Desktop Nav */}

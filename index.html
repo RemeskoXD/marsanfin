@@ -3,9 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Marsan Fin | Komplexní finanční služby</title>
-    <meta name="description" content="Profesionální finanční poradenství, pojištění a investice. Váš partner ve světě financí." />
-    <!-- Keeping Tailwind via CDN for simplicity in this setup, normally would be in package.json too -->
+    
+    <!-- Primary Meta Tags -->
+    <title>Marsan Financial | Pojištění, Investice a Hypotéky Praha</title>
+    <meta name="title" content="Marsan Financial | Pojištění, Investice a Hypotéky Praha">
+    <meta name="description" content="Profesionální finanční služby od Marsan Financial. Nabízíme životní i majetkové pojištění, investice, hypotéky a úvěry. Exkluzivní partner HV Group. Sídlo Praha 10 - Vinohrady." />
+    <meta name="keywords" content="finanční poradenství, pojištění, investice, hypotéky, Marsan Financial, Marsan Fin, HV Group, Praha, životní pojištění, pojištění vozidel, povinné ručení" />
+    <meta name="author" content="Marsan Fin s.r.o." />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Favicon & Icons (Browser Tab & Search Results) -->
+    <link rel="icon" type="image/png" href="/iconlogo.png" />
+    <link rel="shortcut icon" type="image/png" href="/iconlogo.png" />
+    <link rel="apple-touch-icon" href="/iconlogo.png" />
+
+    <!-- Open Graph / Facebook (Social Sharing) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://marsanfin.cz/" />
+    <meta property="og:title" content="Marsan Financial | Stabilní partner pro Vaše finance" />
+    <meta property="og:description" content="Komplexní finanční služby, pojištění a investice na míru. Spojujeme profesionální expertízu s lidským přístupem. Partner HV Group." />
+    <meta property="og:image" content="/iconlogo.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Marsan Financial | Pojištění a Investice" />
+    <meta property="twitter:description" content="Komplexní finanční služby, pojištění a investice na míru. Partner HV Group." />
+    <meta property="twitter:image" content="/iconlogo.png" />
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
@@ -36,6 +61,7 @@
             animation: {
               'fade-in': 'fadeIn 1s ease-out forwards',
               'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
+              'scroll': 'scroll 40s linear infinite',
             },
             keyframes: {
               fadeIn: {
@@ -45,6 +71,10 @@
               fadeInUp: {
                 '0%': { opacity: '0', transform: 'translateY(20px)' },
                 '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              scroll: {
+                '0%': { transform: 'translateX(0)' },
+                '100%': { transform: 'translateX(-50%)' },
               }
             }
           }
@@ -91,6 +121,46 @@
     "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0"
   }
 }
+</script>
+
+<!-- Structured Data (JSON-LD) for Local Business SEO -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FinancialService",
+    "name": "Marsan Financial",
+    "legalName": "Marsan Fin s.r.o.",
+    "image": "https://web2.itnahodinu.cz/pojistovna1/logo.png",
+    "logo": "/iconlogo.png",
+    "description": "Profesionální finanční a pojišťovací služby. Partner HV Group. Životní pojištění, hypotéky, investice.",
+    "url": "https://marsanfin.cz",
+    "telephone": "+420 608 060 303",
+    "email": "info@marsanfin.cz",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Korunní 2569/108",
+      "addressLocality": "Praha 10 - Vinohrady",
+      "postalCode": "101 00",
+      "addressCountry": "CZ"
+    },
+    "taxID": "23613505",
+    "priceRange": "$$",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    "sameAs": [
+      "https://jerrs.cnb.cz/apljerrsdad/JERRS.WEB14.POVOLENE_CINNOSTI?p_lang=cz&p_TYP_SUBJEKTU=P&p_SEQ_ID=17476207"
+    ]
+  }
 </script>
 </head>
   <body>

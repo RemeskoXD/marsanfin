@@ -9,6 +9,8 @@ import Testimonials from './components/Testimonials';
 import LegalDocs from './components/LegalDocs';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import CookieConsent from './components/CookieConsent';
+import NotFound from './components/NotFound';
 
 // Helper component to scroll to top on route change
 const ScrollToTop = () => {
@@ -84,14 +86,17 @@ const ContactPage = () => (
        <h1 className="text-4xl font-bold text-gray-900">Kontakt</h1>
     </div>
     <Contact />
-    <div className="h-[400px] w-full bg-slate-200 relative">
-      {/* Placeholder for real Google Maps Embed - Client needs to provide API key or Embed code */}
-      <div className="absolute inset-0 flex items-center justify-center text-gray-500 bg-gray-200">
-         <div className="text-center p-4">
-           <p className="font-bold text-lg mb-2">Mapa - Korunní 2569/108, Praha 10</p>
-           <p className="text-sm">Zde bude interaktivní mapa po dodání API klíče</p>
-         </div>
-      </div>
+    <div className="h-[400px] w-full bg-slate-200 relative grayscale hover:grayscale-0 transition-all duration-500">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.506896500599!2d14.45562777684074!3d50.07681697152327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b93708d748f67%3A0x70d8a7c647915525!2sKorunn%C3%AD%202569%2F108%2C%20101%2000%20Praha%2010-Vinohrady!5e0!3m2!1scs!2scz!4v1709638123456!5m2!1scs!2scz" 
+        width="100%" 
+        height="100%" 
+        style={{ border: 0 }} 
+        allowFullScreen 
+        loading="lazy" 
+        referrerPolicy="no-referrer-when-downgrade"
+        title="Mapa sídla Marsan Financial"
+      ></iframe>
     </div>
   </>
 );
@@ -110,8 +115,10 @@ function App() {
             <Route path="/partneri" element={<PartnersPage />} />
             <Route path="/dokumenty" element={<DocumentsPage />} />
             <Route path="/kontakt" element={<ContactPage />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
+        <CookieConsent />
         <Footer />
       </div>
     </BrowserRouter>
